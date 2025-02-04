@@ -97,6 +97,11 @@ run_command_hide() {
   return 0
 }
 
+# Similar to run_command_hide but does not display the output in case of error
+run_command_hide_nerr() {
+  run_command_no_log_error=1 run_command_hide "$@"
+}
+
 # Similar to run_command but with eval
 # it allows to run command starting with !, variables or any valid shell
 run_command_eval() {
